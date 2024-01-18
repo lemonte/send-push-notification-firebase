@@ -32,6 +32,15 @@ document.getElementById('push-form').addEventListener('submit', function(e) {
         body: JSON.stringify(payload)
     })
     .then(response => response.json())
-    .then(data => console.log(data))
+    .then(data => {
+        console.log(data);
+        showToast(); // Exibe o toast quando a notificação é enviada
+    })
     .catch(error => console.error('Error:', error));
 });
+
+function showToast() {
+    var toast = document.getElementById("toast");
+    toast.className = "show";
+    setTimeout(function(){ toast.className = toast.className.replace("show", ""); }, 3000);
+}
