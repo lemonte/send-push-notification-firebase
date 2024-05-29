@@ -11,7 +11,8 @@ document.getElementById('push-form').addEventListener('submit', function(e) {
     var payload = {
         "notification": {
             "title": title,
-            "body": body
+            "body": body,
+            "content_available": true
         },
         "priority": "high",
         "data": {
